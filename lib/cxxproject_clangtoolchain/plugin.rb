@@ -34,7 +34,9 @@ cxx_plugin do |cxx,bbs,log|
         :USER_LIB_FLAG => "-l:",
         :EXE_FLAG => "-o",
         :LIB_FLAG => "-l",
-        :LIB_PATH_FLAG => "-L"
+        :LIB_PATH_FLAG => "-L",
+        :START_OF_WHOLE_ARCHIVE => '-Wl,--whole-archive',
+        :END_OF_WHOLE_ARCHIVE => '-Wl,--no-whole-archive'
       },
     :ARCHIVER =>
       {
