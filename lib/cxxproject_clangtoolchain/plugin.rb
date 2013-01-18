@@ -1,4 +1,4 @@
-cxx_plugin do |cxx,bbs,log|
+cxx_plugin do
 
   require 'errorparser/clang_compiler_error_parser'
   toolchain "clang",
