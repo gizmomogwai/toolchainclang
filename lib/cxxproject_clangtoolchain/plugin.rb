@@ -32,11 +32,11 @@ cxx_plugin do
         :COMMAND => "clang++",
         :SCRIPT => "-T",
         :USER_LIB_FLAG => "-l:",
-        :EXE_FLAG => "-o",
+        :OUTPUT_FLAG => "-o",
         :LIB_FLAG => "-l",
         :LIB_PATH_FLAG => "-L",
-        :START_OF_WHOLE_ARCHIVE => {:UNIX => '-Wl,--whole-archive'},
-        :END_OF_WHOLE_ARCHIVE => {:UNIX => '-Wl,--no-whole-archive'}
+        :START_OF_WHOLE_ARCHIVE => {:UNIX => '-Wl,--whole-archive', :OSX => '-force_load', :WINDOWS => '-Wl,--whole-archive'},
+        :END_OF_WHOLE_ARCHIVE => {:UNIX => '-Wl,--no-whole-archive', :OSX => '', :WINDOWS => '-Wl,--no-whole-archive'},
       },
     :ARCHIVER =>
       {
